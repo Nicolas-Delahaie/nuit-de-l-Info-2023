@@ -1,0 +1,1 @@
+Dossier contenant des fonctions ou du code utile à l’application , comme par exemple le formatage des dates, les fonctions gérants les erreurs, ou encore des fonctions de redirection.

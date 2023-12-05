@@ -1,0 +1,1 @@
+thème de l’application contenant la typographie, les couleurs et d’autres constantes de l’application relatives au thème.
