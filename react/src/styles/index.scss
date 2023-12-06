@@ -1,5 +1,5 @@
 /* --------------------------------------------- */
-/*                IMPORTS GLOBAUX                */
+/*                    IMPORTS                    */
 /* --------------------------------------------- */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
 
@@ -11,24 +11,21 @@
     --xxx-x: #xxxxx;
 }
 
-// Styles globaux a toute l application
 * {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        //color:
-        //user-select: none; //Pour que le texte ne soit pas selectionnable
+    //color:
+    //user-select: none; //Pour que le texte ne soit pas selectionnable
 }
 
 
+/* --------------------------------------------- */
+/*               BALISES NATIVES HTML            */
+/* --------------------------------------------- */
 body {
-    // margin: 0;
+    margin: 0;
     // font-family: 
     //     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     //     sans-serif;
     // -webkit-font-smoothing: antialiased;
     // -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    // font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    //     monospace;
 }
