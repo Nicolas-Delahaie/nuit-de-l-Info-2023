@@ -1,0 +1,1 @@
+code ou fonctions permettant de récupérer des données ou bien d’accéder à des variables spécifiques, le code de l’api sera par exemple ici.
