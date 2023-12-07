@@ -13,8 +13,8 @@
 
 * {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    //color:
-    //user-select: none; //Pour que le texte ne soit pas selectionnable
+        //color:
+        //user-select: none; //Pour que le texte ne soit pas selectionnable
 }
 
 
@@ -28,4 +28,9 @@ body {
     //     sans-serif;
     // -webkit-font-smoothing: antialiased;
     // -moz-osx-font-smoothing: grayscale;
+}
+
+#App {
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
 }

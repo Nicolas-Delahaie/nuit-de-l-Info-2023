@@ -1,4 +1,9 @@
+import { BrowserRouter, Routes } from "react-router-dom";
+import { Route } from "react-router";
+
 import { createContext } from 'react';
+import { Header, Footer } from './components';
+import { Home, NotFound } from './pages';
 
 
 function App() {
@@ -80,7 +85,14 @@ function App() {
   return (
     <div id="App">
       <contexte.Provider value={{ apiAccess }}>
-        <h1>React Nuit Info</h1>
+        <Header />
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes >
+        </BrowserRouter >
+        <Footer />
       </contexte.Provider>
     </div>
   );

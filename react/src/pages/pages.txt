@@ -1,1 +1,0 @@
-pages de l’applications ( Accueil, Contact, etc…), les pages seront organisées par dossiers afin de regrouper le code, le style et les tests d’une page sous un même dossier.
