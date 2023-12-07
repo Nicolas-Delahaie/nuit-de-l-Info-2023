@@ -5,13 +5,11 @@ import { createContext } from 'react';
 import { Header, Footer } from './components';
 import { Home, NotFound } from './pages';
 
+// ------- CONTEXTE -------
+export const contexte = createContext();
+
 
 function App() {
-
-  // ------- CONTEXTE -------
-  const contexte = createContext();
-
-
   // -- FONCTIONS --
   /**
    * @brief Permet d'envoyer une requête à une API de manière pratique et unifiée.
@@ -51,7 +49,7 @@ function App() {
       method: method,
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        'Accept': 'application/json'
       },
       body: body && JSON.stringify(body),
     })
