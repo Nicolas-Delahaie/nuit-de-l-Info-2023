@@ -3,7 +3,7 @@ import { Route } from "react-router";
 
 import { createContext } from 'react';
 import { Header, Footer } from './components';
-import { Home, NotFound } from './pages';
+import { Home, NotFound, Connect, KGames, News, ToTrain, WaterMelonGame , Inform} from './pages';
 
 // ------- CONTEXTE -------
 export const contexte = createContext();
@@ -87,6 +87,12 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/connect" element={<Connect />} />
+            <Route exact path="/kgames" element={<KGames />} />
+            <Route exact path="/news" element={<News />} />
+            <Route exact path="/totrain" element={<ToTrain />} />
+            <Route exact path="/watermelongame" element={<WaterMelonGame />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes >
         </BrowserRouter >
