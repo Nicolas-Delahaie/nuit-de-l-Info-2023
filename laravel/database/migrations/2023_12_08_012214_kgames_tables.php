@@ -13,12 +13,23 @@ return new class extends Migration {
         // -------------------------------------------- //
         //        C R E A T I O N   T A B L E S         //
         // -------------------------------------------- //
+        Schema::create("categories", function (Blueprint $table) {
+            $table->id();
+            $table->string('nom');
+        });
+        Schema::create("reponses_categories", function (Blueprint $table) {
+            $table->id();
+            // Clés étrangères
+            $table->unsignedBigInteger('reponse_id');
+            $table->unsignedBigInteger('categorie_id');
+            $table->unique(['reponse_id', 'categorie_id']);
+        });
         Schema::create("reponses", function (Blueprint $table) {
             $table->id();
             $table->string('titre');
-            $table->string('categorie');
             $table->string('description');
         });
+            
         Schema::create("reponses_questions", function (Blueprint $table) {
             $table->id();
             $table->boolean('estBonneQuestion');
@@ -33,7 +44,7 @@ return new class extends Migration {
             $table->string('type');
             $table->integer('score');
             $table->integer('difficulte');
-            $table->binary('images');
+            $table->binary('image');
             $table->string('libelle');
             // Clés étrangères
             $table->unsignedBigInteger('quizz_id');

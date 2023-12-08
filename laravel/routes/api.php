@@ -34,3 +34,15 @@ Route::get('/donnees-veep-Connected', [Controller::class, 'getVeepContentConnect
 use App\Http\Controllers\UserController;
 
 Route::post('/login', [UserController::class, 'login']);
+
+
+/* -------------------------------------------------------------------------- */
+/*                                    QUIZZ                                   */
+/* -------------------------------------------------------------------------- */
+use App\Http\Controllers\QuizzController;
+use App\Models\Quizz;
+
+Route::get('/quizz/{id}/questions_reponses', [QuizzController::class, 'showQuestionsReponses']);
+Route::get('test', function (Request $request) {
+    return Quizz::findOrFail(1)->questions;
+});

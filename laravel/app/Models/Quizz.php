@@ -15,4 +15,9 @@ class Quizz extends Model
     protected $fillable = [
         'dateCreation'
     ];
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

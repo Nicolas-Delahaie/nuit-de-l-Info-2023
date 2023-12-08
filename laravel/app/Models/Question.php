@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Client\ResponseSequence;
 
 class Question extends Model
 {
@@ -15,8 +16,13 @@ class Question extends Model
         'type',
         'score',
         'difficulte',
-        'images',
+        'image',
         'libelle',
         'quizz_id',
     ];
+
+    public function reponses()
+    {
+        return $this->hasManyThrough(Reponse::class, ReponseQuestion::class);
+    }
 }
