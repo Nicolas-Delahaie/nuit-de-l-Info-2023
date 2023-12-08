@@ -11,13 +11,14 @@ class VeepContent extends Model
 
     // use table name
     protected $table = 'veep_contents';
+    public $timestamps = false;
 
     protected $fillable = [
         'question',
-        'content',
         'vocalDate',
         'linkedin',
         'description',
         'blog',
+        'connected',
     ];
 }
