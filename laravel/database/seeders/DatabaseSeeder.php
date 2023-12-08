@@ -51,97 +51,97 @@ class DatabaseSeeder extends Seeder
             \App\Models\Categorie::create($categorie);
         }
 
-        /* -------------------------------------------------------------------------- */
-        /*                             REPONSES CATEGORIES                            */
-        /* -------------------------------------------------------------------------- */
-        $reponses_categories = [
-            // REPONSE 1
-            [
-                "reponse_id" => 1,
-                "categorie_id" => 1
-            ],
-            [
-                "reponse_id" => 1,
-                "categorie_id" => 2
-            ],
-            // REPONSE 2
-            [
-                "reponse_id" => 2,
-                "categorie_id" => 1
-            ],
-            [
-                "reponse_id" => 2,
-                "categorie_id" => 2
-            ],
-            // REPONSE 3
-            [
-                "reponse_id" => 3,
-                "categorie_id" => 1
-            ],
-            // REPONSE 4
-            [
-                "reponse_id" => 4,
-                "categorie_id" => 1
-            ],
-            // REPONSE 5
-            [
-                "reponse_id" => 5,
-                "categorie_id" => 3
-            ],
-            [
-                "reponse_id" => 5,
-                "categorie_id" => 4
-            ],
-            // REPONSE 6
-            [
-                "reponse_id" => 6,
-                "categorie_id" => 3
-            ],
-            [
-                "reponse_id" => 6,
-                "categorie_id" => 4
-            ],
-            // REPONSE 7
-            [
-                "reponse_id" => 7,
-                "categorie_id" => 3
-            ],
-            [
-                "reponse_id" => 7,
-                "categorie_id" => 4
-            ],
-            // REPONSE 8
-            [
-                "reponse_id" => 8,
-                "categorie_id" => 3
-            ],
-            [
-                "reponse_id" => 8,
-                "categorie_id" => 4
-            ],
-            // REPONSE 9
-            [
-                "reponse_id" => 9,
-                "categorie_id" => 1
-            ],
-            [
-                "reponse_id" => 9,
-                "categorie_id" => 5
-            ],
-            // REPONSE 10
-            [
-                "reponse_id" => 10,
-                "categorie_id" => 1
-            ],
-            [
-                "reponse_id" => 10,
-                "categorie_id" => 5
-            ],
-            // REPONSE 11
-            [
-                "reponse_id"
-            ]
-        ];
+        // /* -------------------------------------------------------------------------- */
+        // /*                             REPONSES CATEGORIES                            */
+        // /* -------------------------------------------------------------------------- */
+        // $reponses_categories = [
+        //     // REPONSE 1
+        //     [
+        //         "reponse_id" => 1,
+        //         "categorie_id" => 1
+        //     ],
+        //     [
+        //         "reponse_id" => 1,
+        //         "categorie_id" => 2
+        //     ],
+        //     // REPONSE 2
+        //     [
+        //         "reponse_id" => 2,
+        //         "categorie_id" => 1
+        //     ],
+        //     [
+        //         "reponse_id" => 2,
+        //         "categorie_id" => 2
+        //     ],
+        //     // REPONSE 3
+        //     [
+        //         "reponse_id" => 3,
+        //         "categorie_id" => 1
+        //     ],
+        //     // REPONSE 4
+        //     [
+        //         "reponse_id" => 4,
+        //         "categorie_id" => 1
+        //     ],
+        //     // REPONSE 5
+        //     [
+        //         "reponse_id" => 5,
+        //         "categorie_id" => 3
+        //     ],
+        //     [
+        //         "reponse_id" => 5,
+        //         "categorie_id" => 4
+        //     ],
+        //     // REPONSE 6
+        //     [
+        //         "reponse_id" => 6,
+        //         "categorie_id" => 3
+        //     ],
+        //     [
+        //         "reponse_id" => 6,
+        //         "categorie_id" => 4
+        //     ],
+        //     // REPONSE 7
+        //     [
+        //         "reponse_id" => 7,
+        //         "categorie_id" => 3
+        //     ],
+        //     [
+        //         "reponse_id" => 7,
+        //         "categorie_id" => 4
+        //     ],
+        //     // REPONSE 8
+        //     [
+        //         "reponse_id" => 8,
+        //         "categorie_id" => 3
+        //     ],
+        //     [
+        //         "reponse_id" => 8,
+        //         "categorie_id" => 4
+        //     ],
+        //     // REPONSE 9
+        //     [
+        //         "reponse_id" => 9,
+        //         "categorie_id" => 1
+        //     ],
+        //     [
+        //         "reponse_id" => 9,
+        //         "categorie_id" => 5
+        //     ],
+        //     // REPONSE 10
+        //     [
+        //         "reponse_id" => 10,
+        //         "categorie_id" => 1
+        //     ],
+        //     [
+        //         "reponse_id" => 10,
+        //         "categorie_id" => 5
+        //     ],
+        //     // REPONSE 11
+        //     [
+        //         "reponse_id"
+        //     ]
+        // ];
 
         /* -------------------------------------------------------------------------- */
         /*                                  REPONSES                                  */
@@ -201,126 +201,126 @@ class DatabaseSeeder extends Seeder
             Reponse::create($reponse);
         }
 
-        /* -------------------------------------------------------------------------- */
-        /*                                  QUESTIONS                                 */
-        /* -------------------------------------------------------------------------- */
-        $questions = [
-            [
-                "type" => "choix_multiple",
-                "score" => 4,
-                "difficulte" => "difficile",
-                "image" => "chemin/vers/image3.jpg",
-                "libelle" => "Quel est l'impact de la déforestation sur le climat ?",
-                "quizz_id" => 1
-            ],
-            [
-                "type" => "choix_unique",
-                "score" => 3,
-                "difficulte" => "facile",
-                "image" => "chemin/vers/image2.jpg",
-                "libelle" => "Quelle est la première règle des 3R pour la réduction des déchets ?",
-                "quizz_id" => 1
-            ],
-            [
-                "type" => "choix_multiple",
-                "score" => 5,
-                "difficulte" => "moyen",
-                "image" => "chemin/vers/image1.jpg",
-                "libelle" => "Quel gaz est le principal responsable du réchauffement climatique ?",
-                "quizz_id" => 1
-            ]
-        ];
+        // /* -------------------------------------------------------------------------- */
+        // /*                                  QUESTIONS                                 */
+        // /* -------------------------------------------------------------------------- */
+        // $questions = [
+        //     [
+        //         "type" => "choix_multiple",
+        //         "score" => 4,
+        //         "difficulte" => "difficile",
+        //         "image" => "chemin/vers/image3.jpg",
+        //         "libelle" => "Quel est l'impact de la déforestation sur le climat ?",
+        //         "quizz_id" => 1
+        //     ],
+        //     [
+        //         "type" => "choix_unique",
+        //         "score" => 3,
+        //         "difficulte" => "facile",
+        //         "image" => "chemin/vers/image2.jpg",
+        //         "libelle" => "Quelle est la première règle des 3R pour la réduction des déchets ?",
+        //         "quizz_id" => 1
+        //     ],
+        //     [
+        //         "type" => "choix_multiple",
+        //         "score" => 5,
+        //         "difficulte" => "moyen",
+        //         "image" => "chemin/vers/image1.jpg",
+        //         "libelle" => "Quel gaz est le principal responsable du réchauffement climatique ?",
+        //         "quizz_id" => 1
+        //     ]
+        // ];
 
-        foreach ($questions as $question) {
-            Question::create($question);
-        }
+        // foreach ($questions as $question) {
+        //     Question::create($question);
+        // }
 
 
-        /* -------------------------------------------------------------------------- */
-        /*                             REPONSES QUESTIONS                             */
-        /* -------------------------------------------------------------------------- */
-        $reponses_questions = [
-            // QUESTION 1
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 1,
-                "question_id" => 1
-            ],
-            [
-                "estBonneQuestion" => true,
-                "niveauPertinence" => 4,
-                "reponse_id" => 2,
-                "question_id" => 1
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 3,
-                "question_id" => 1
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 4,
-                "question_id" => 1
-            ],
+        // /* -------------------------------------------------------------------------- */
+        // /*                             REPONSES QUESTIONS                             */
+        // /* -------------------------------------------------------------------------- */
+        // $reponses_questions = [
+        //     // QUESTION 1
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 1,
+        //         "question_id" => 1
+        //     ],
+        //     [
+        //         "estBonneQuestion" => true,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 2,
+        //         "question_id" => 1
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 3,
+        //         "question_id" => 1
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 4,
+        //         "question_id" => 1
+        //     ],
 
-            // QUESTION 2
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 5,
-                "question_id" => 2
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 6,
-                "question_id" => 2
-            ],
-            [
-                "estBonneQuestion" => true,
-                "niveauPertinence" => 4,
-                "reponse_id" => 7,
-                "question_id" => 2
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 8,
-                "question_id" => 2
-            ],
+        //     // QUESTION 2
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 5,
+        //         "question_id" => 2
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 6,
+        //         "question_id" => 2
+        //     ],
+        //     [
+        //         "estBonneQuestion" => true,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 7,
+        //         "question_id" => 2
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 8,
+        //         "question_id" => 2
+        //     ],
 
-            // QUESTION 3
-            [
-                "estBonneQuestion" => true,
-                "niveauPertinence" => 4,
-                "reponse_id" => 9,
-                "question_id" => 3
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 10,
-                "question_id" => 3
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 11,
-                "question_id" => 3
-            ],
-            [
-                "estBonneQuestion" => false,
-                "niveauPertinence" => 4,
-                "reponse_id" => 12,
-                "question_id" => 3
-            ]
-        ];
-        foreach ($reponses_questions as $reponse_question) {
-            Question::create($reponse_question);
-        }
+        //     // QUESTION 3
+        //     [
+        //         "estBonneQuestion" => true,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 9,
+        //         "question_id" => 3
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 10,
+        //         "question_id" => 3
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 11,
+        //         "question_id" => 3
+        //     ],
+        //     [
+        //         "estBonneQuestion" => false,
+        //         "niveauPertinence" => 4,
+        //         "reponse_id" => 12,
+        //         "question_id" => 3
+        //     ]
+        // ];
+        // foreach ($reponses_questions as $reponse_question) {
+        //     Question::create($reponse_question);
+        // }
 
 
         /* -------------------------------------------------------------------------- */
