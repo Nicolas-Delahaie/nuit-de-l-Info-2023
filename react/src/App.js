@@ -3,7 +3,7 @@ import { Route } from "react-router";
 
 import { createContext } from 'react';
 import { Header, Footer } from './components';
-import { Home, NotFound } from './pages';
+import { Home, NotFound, PocDiesel } from './pages';
 
 // ------- CONTEXTE -------
 export const contexte = createContext();
@@ -87,6 +87,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/pocDiesel" element={<PocDiesel/>} />
             <Route path="*" element={<NotFound />} />
           </Routes >
         </BrowserRouter >
