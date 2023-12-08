@@ -6,7 +6,7 @@
 
 .separateur {
   height: 20vh;
-  width: 100vw;
+  width: 100%;
 
   background: red;
 
@@ -21,7 +21,7 @@
 
   &__ligne {
     height: 1px;
-    width: 100vw;
+    width: 100%;
 
     &.left {
       border-top-right-radius: 999px;

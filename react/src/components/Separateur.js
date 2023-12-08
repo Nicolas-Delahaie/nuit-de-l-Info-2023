@@ -12,7 +12,10 @@ import "../styles/Composants/Separateur.scss";
 /**
  * Séparateur
  *
+ *
  * @param icone obligatoire, SVG, IMG, etc.
+ * @param height hauteur du composant, par défaut 20vh
+ * @param width largeur du composant, par défaut 100%
  * @param iconPadding padding de l'icone, par défaut 2rem
  * @param bgColor couleur de fond, par défaut hotpink
  * @param lineColor couleur de la ligne, par défaut #fff
@@ -23,6 +26,8 @@ import "../styles/Composants/Separateur.scss";
  */
 const Separateur = ({
   icone,
+  height = "20vh",
+  width = "100%",
   iconPadding = "2rem",
   bgColor = "#5a8f69",
   lineColor = "#fff",
@@ -31,7 +36,12 @@ const Separateur = ({
 
 
     return (
-        <div className="separateur" style={{backgroundColor: bgColor}}>
+        <div className="separateur" style={{
+            backgroundColor: bgColor,
+            height: height,
+            width: width
+          }}
+        >
             <div className="separateur__ligne left" style={{
                 backgroundColor: lineColor,
                 height: lineSize
