@@ -12,12 +12,12 @@ return new class extends Migration {
     {
         Schema::create('veep_contents', function (Blueprint $table) {
             $table->id();
-            $table->string('question');
-            $table->string('content');
+            $table->longText('question');
             $table->date('vocalDate');
-            $table->string('linkedin');
-            $table->string('description');
-            $table->string('blog');
+            $table->longText('linkedin');
+            $table->longText('description');
+            $table->longText('blog');
+            $table->boolean('connected');
         });
     }
 
@@ -26,6 +26,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('veep_contents');
     }
 };
