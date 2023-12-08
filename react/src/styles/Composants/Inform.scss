@@ -42,7 +42,7 @@
             width: 100%;
             .titre {
                 color: $green;
-                font-size: 2.5em;
+                font-size: 2em;
                 margin: 0;
                 text-transform: uppercase;
             }
@@ -50,7 +50,7 @@
                 color: $green;
                 margin: 0 0 1em 0;
                 color: $black;
-                font-size: 2.5em;
+                font-size: 2em;
             }
             .article {
                 display: flex;
@@ -70,7 +70,7 @@
                     }
                 }
                 .title {
-                    font-size: 2em;
+                    font-size: 1.5em;
                     margin: 0;
                     color: $black;
                     font-weight: bold;

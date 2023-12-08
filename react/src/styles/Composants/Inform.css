@@ -41,7 +41,7 @@
 }
 #inform .separateArticles .articles .titre {
   color: #5a8f69;
-  font-size: 2.5em;
+  font-size: 2em;
   margin: 0;
   text-transform: uppercase;
 }
@@ -49,7 +49,7 @@
   color: #5a8f69;
   margin: 0 0 1em 0;
   color: #333;
-  font-size: 2.5em;
+  font-size: 2em;
 }
 #inform .separateArticles .articles .article {
   display: flex;
@@ -71,7 +71,7 @@
      object-fit: cover;
 }
 #inform .separateArticles .articles .article .title {
-  font-size: 2em;
+  font-size: 1.5em;
   margin: 0;
   color: #333;
   font-weight: bold;
