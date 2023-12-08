@@ -1,13 +1,9 @@
-import "../styles/Composants/WaterMelonGame.css";
+import "../styles/Composants/WaterMelonGame.scss";
 
 function WaterMelonGame() {
   return (
     // iframe qui prend tout l'écran
-    <iframe
-      src="https://pastequeembusques.alwaysdata.net/"
-      width="100%"
-      height="500px"
-    ></iframe>
+    <iframe src="https://pastequeembusques.alwaysdata.net/"></iframe>
   );
 }
 export default WaterMelonGame;
