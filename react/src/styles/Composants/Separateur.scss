@@ -1,0 +1,57 @@
+/**
+ * @file react/src/styles/Composants/Separateur.scss
+ * @description Separateur styles file
+ * @author Tom Planche
+ */
+
+@import "../variables";
+
+.separateur {
+  height: 20vh;
+  width: 100%;
+
+  background: var(--accent-color);
+  color: var(--text-color);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__icone {
+    height: 10rem;
+    width: auto;
+    padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+
+  }
+
+  &__ligne {
+    height: 1px;
+    width: 100%;
+
+    &.left {
+      border-top-right-radius: 999px;
+      border-bottom-right-radius: 999px;
+    }
+
+    &.right {
+      border-top-left-radius: 999px;
+      border-bottom-left-radius: 999px;
+    }
+
+  }
+
+}
+
+/**
+ * End of file react/src/styles/Composants/Separateur.scss
+ */

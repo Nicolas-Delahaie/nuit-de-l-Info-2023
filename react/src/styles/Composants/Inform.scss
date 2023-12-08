@@ -1,0 +1,138 @@
+@import "../Variables.scss";
+
+
+#inform {
+
+
+    .firstArticle {
+        padding: 8em 10vw;
+        display: flex;
+        position: relative;
+        min-height: 20rem;
+        background: var(--background);
+        color: var(--text-color);
+
+        body:is(.minimalist) & {
+            min-height: 10rem;
+        }
+
+        .datas {
+
+            width: 60%;
+            &:is(.full) {
+                width: 100%;
+
+                p {
+                    width: 100%;
+                }
+            }
+
+            h1 {
+                font-size: 5.5em;
+                margin: 0 0 0.5em 0;
+                left: 1em;
+            }
+            p {
+                font-size: 1.5em;
+            }
+        }
+        img {
+            position: absolute;
+            max-height: calc(100% - 16em);
+            margin: auto;
+            right: 0;
+            bottom: 8em;
+            z-index: 3;
+            left: 50%;
+        }
+    }
+    .separateArticles {
+        color: var(--text-color);
+
+        display: flex;
+        justify-content: space-around;
+        padding: 8em 10vw;
+        .articles {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 4em 0;
+            width: 100%;
+            .titre {
+                color: var(--test);
+                font-size: 2em;
+                margin: 0;
+                text-transform: uppercase;
+            }
+            .sousTitre {
+                color: var(--test);
+                margin: 0 0 1em 0;
+                font-size: 2em;
+            }
+            .article {
+                display: flex;
+                width: 100%;
+                height: 8em;
+                padding: 1em;
+                .imgContainer {
+                    width: 8em;
+                    height: 100%;
+                    border-radius: 5px;
+                    overflow: hidden;
+                    margin-right: 1em;
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .title {
+                    font-size: 1.5em;
+                    margin: 0;
+                    color: var(--text-color);
+                    font-weight: bold;
+
+                }
+                a {
+                    text-decoration: none;
+                }
+
+            }
+        }
+        .savoirPlus {
+            width: 100%;
+            text-align: right;
+            a {
+                display: inline;
+                margin-top: 2em;
+                font-size: 1.5em;
+                color: var(--test);
+                margin: 0;
+                text-decoration: underline;
+                font-weight: bold;
+
+                color: var(--accent-color);
+
+                &::before {
+                    body:is(.fire) & {
+                      text-decoration: none;
+                      content: "🔥";
+                    }
+                  }
+
+            }
+            .arrow {
+                display: inline;
+                font-weight: bold;
+                color: var(--accent-color);
+                font-size: 2em;
+                margin-left: 0.5em;
+            }
+
+        }
+
+
+    }
+
+}

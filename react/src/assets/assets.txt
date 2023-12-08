@@ -1,0 +1,1 @@
+données ou images de l’application, les données sont classées par sous-dossier spécifiques aux données : JSON, icones, images, vidéos 

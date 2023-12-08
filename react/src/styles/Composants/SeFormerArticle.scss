@@ -1,0 +1,77 @@
+/**
+ * @file react/src/styles/Composants/SeFormerArticle.scss
+ * @description
+ * @author Tom Planche
+ */
+
+@import "../Variables";
+
+.seFormerArticle {
+  min-height: 30vh;
+  width: 100%;
+
+  padding: 3rem 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 100%;
+      width: auto;
+      max-width: 60%;
+    }
+  }
+
+  &__text {
+
+    width: 60%;
+
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    &:is(.full) {
+        width: 100%;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: var(--text-color);
+    }
+
+    a {
+      color: var(--accent-color);
+      align-self: flex-end;
+      font-size: 2rem;
+
+      padding-right: 5rem;
+
+      text-decoration: underline;
+
+      &::before {
+        body:is(.fire) & {
+          text-decoration: none;
+          content: "🔥";
+        }
+      }
+    }
+  }
+
+}
+
+/**
+ * End of file react/src/styles/Composants/SeFormerArticle.scss
+ */

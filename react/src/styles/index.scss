@@ -1,0 +1,37 @@
+/* --------------------------------------------- */
+/*                    IMPORTS                    */
+/* --------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap');
+
+
+/* --------------------------------------------- */
+/*                     GLOABL                    */
+/* --------------------------------------------- */
+:root {
+    --xxx-x: #xxxxx;
+}
+
+* {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        //color:
+        //user-select: none; //Pour que le texte ne soit pas selectionnable
+}
+
+/* --------------------------------------------- */
+/*               BALISES NATIVES HTML            */
+/* --------------------------------------------- */
+body {
+    margin: 0;
+    // font-family:
+    //     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    //     sans-serif;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+#App {
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
+}

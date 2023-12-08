@@ -1,0 +1,191 @@
+
+
+#home{
+    min-height: calc(100vh - 100px);
+    margin-top: 60px;
+
+    background: var(--background);
+    color: var(--text-color);
+
+    .main-header
+    {
+        height: 20vh;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        position: relative;
+
+        color: white;
+
+        body:is(.minimal) & {
+            background: var(--accent-color);
+        }
+
+        body:not(.minimal) & {
+            background-image: url("https://media.discordapp.net/attachments/883296572077649930/1182493612404121610/pexels-pixabay-122429.jpg?ex=6584e5fe&is=657270fe&hm=b98f56e4bdedd52c2445d28603d965145a898c9af0cf5c8be5b75c9692fa9f2b&=&format=webp&width=1200&height=570");
+        }
+
+        // filtre flou
+        margin: 20px;
+        width: calc(100% - 40px);
+        border-radius: 10px;
+
+        .blur{
+            backdrop-filter: blur(3px);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        h2, h4, button {
+            color: white !important;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2{
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h4{
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        button{
+            font-size: 1.2rem;
+            font-weight: 500;
+            text-align: center;
+            padding: 7px 20px;
+            border-radius: 10px;
+            border: none;
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            border: 1px solid white;
+
+            &:hover{
+                background-color: var(--accent-color);
+            }
+        }
+    }
+
+
+    .first-section,
+    .second-section{
+        margin: 100px 10vw;
+    }
+
+
+    .first-section{
+        display: grid;
+        grid-template-columns: 1fr .8fr;
+
+        .text{
+            color: var(--text-color);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+            h3{
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--accent-color);
+                margin: 0;
+                font-style: italic;
+            }
+
+            p{
+                font-size: .9rem;
+                font-weight: 500;
+                margin: 0;
+            }
+        }
+    }
+
+    .second-section{
+        .title{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            h3{
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: var(--accent-color);
+                margin: 0;
+                position: relative;
+                text-decoration: underline;
+                font-style: italic;
+
+                svg{
+                    * {
+                        fill: var(--accent-color);
+                    }
+
+                    position: absolute;
+                    top: 50%;
+                    left: -40px;
+                    transform: translateY(-50%);
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+
+        .text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+
+            p{
+                font-size: .9rem;
+                font-weight: 500;
+                padding: 40px;
+                color: #144e2c;
+            }
+
+            button{
+                font-size: 1rem;
+                font-weight: 500;
+                text-align: center;
+                padding: 7px 20px;
+                border-radius: 10px;
+                border: none;
+                color: #144e2c;
+                background-color: white;
+                width: min-content;
+                white-space: nowrap;
+                margin-left: auto;
+                cursor: pointer;
+                text-decoration: underline;
+                font-style: italic;
+
+            }
+        }
+    }
+
+    .third-section{
+        margin: 50px 10vw;
+
+        h1{
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            font-style: italic;
+            text-decoration: underline;
+        }
+    }
+}
+
