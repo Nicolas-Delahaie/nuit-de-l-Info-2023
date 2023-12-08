@@ -1,10 +1,28 @@
 /* -------------------------------------------------------------------------- */
 /*                                  VARIABLES                                 */
 /* -------------------------------------------------------------------------- */
-h1 {
+#inform .firstArticle {
+  padding: 8em 10vw;
+  display: flex;
+  position: relative;
+  height: 40em;
+}
+#inform .firstArticle .datas h1 {
+  font-size: 5.5em;
+  color: #333;
+  margin: 0 0 0.5em 0;
+  left: 1em;
+}
+#inform .firstArticle .datas p {
+  width: 50%;
   font-size: 1.5em;
-  text-align: center;
-  color: #bc4749;
-  margin-top: 20px;
-  margin-bottom: 20px;
+}
+#inform .firstArticle img {
+  position: absolute;
+  max-height: calc(100% - 16em);
+  margin: auto;
+  right: 0;
+  bottom: 8em;
+  z-index: -1;
+  left: 50%;
 }/*# sourceMappingURL=Inform.css.map */
