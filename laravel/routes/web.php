@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Services\ApiVeepContent;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,5 +14,6 @@ use App\Services\ApiVeepContent;
 |
 */
 
-Route::get('/donnees-veep-NoConnected', 'App\Http\Controllers\Controller@getVeepContentNoConnect');
-Route::get('/donnees-veep-Connected', 'App\Http\Controllers\Controller@getVeepContentConnect');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
