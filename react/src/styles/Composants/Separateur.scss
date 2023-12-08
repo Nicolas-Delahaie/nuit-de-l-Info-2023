@@ -6,7 +6,7 @@
 
 .separateur {
   height: 20vh;
-  width: 100vw;
+  width: 100%;
 
   background: red;
 
@@ -16,12 +16,24 @@
   align-items: center;
 
   &__icone {
+    height: 10rem;
+    width: auto;
     padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+
   }
 
   &__ligne {
     height: 1px;
-    width: 100vw;
+    width: 100%;
 
     &.left {
       border-top-right-radius: 999px;
