@@ -4,7 +4,7 @@ import {useContext, useEffect, useState} from "react";
 import {contexte} from "../App";
 
 
-function UneNews({UneNews}) {
+function UneNews(UneNews) {
 
     const {
       theme,
@@ -16,20 +16,20 @@ function UneNews({UneNews}) {
       setIsMinimal(theme !== 'minimal');
     }, [theme]);
 
+
     return (
-        <div className="unenews" id={UneNews.id}>
-            <div className="profil">
-                {/* blob  */}
-              {
-                isMinimal && <img src={UneNews.blob} alt="blob"/>
-              }
-              <a href={UneNews.linkedin} target="_blank" rel="noreferrer">Linkedin</a>
+        <div className="unenews">
+            <div className="profil" id = {UneNews.UneNew.id}>
+              <a href={UneNews.UneNew.linkedin} target="_blank" rel="noreferrer">Linkedin</a>
             </div>
             <div className="text">
-                <h2 id='quest'>{UneNews.question}</h2>
-                <p id='desc'>{UneNews.description}</p>
+                <h2 id='quest'>{UneNews.UneNew.question}</h2>
+                <p id='desc'>{UneNews.UneNew.description}</p>
                 {/* On formalise la date de la news UneNews.vocaldate en 2021-11-20T00:00:00.000Z => 20/11/2021 */}
-                <p id='date'>{UneNews.vocaldate.slice(8,10)}/{UneNews.vocaldate.slice(5,7)}/{UneNews.vocaldate.slice(0,4)}</p>
+                <p id="blog">
+                {UneNews.UneNew.blog}
+                </p>
+                <p id="date" >{UneNews.UneNew.vocalDate}</p>
             </div>
 
         </div>
