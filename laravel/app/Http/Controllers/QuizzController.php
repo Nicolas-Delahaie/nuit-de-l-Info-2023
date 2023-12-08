@@ -14,4 +14,5 @@ class QuizzController extends Controller
             ->with('reponses')
             ->get();
     }
+
 }

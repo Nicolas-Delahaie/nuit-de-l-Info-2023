@@ -74,4 +74,16 @@ class Controller extends BaseController
             return $e->getMessage();
         }
     }
+
+    static public function getContentConnected()
+    {
+        $veepContent = VeepContent::where('connected', true)->get();
+        return $veepContent;
+    }
+
+    static public function getContentNoConnected()
+    {
+        $veepContent = VeepContent::where('connected', false)->get();
+        return $veepContent;
+    }
 }
