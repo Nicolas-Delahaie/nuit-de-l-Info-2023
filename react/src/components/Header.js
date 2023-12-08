@@ -1,16 +1,18 @@
 
 
-
 function Header() {
+
+    const logo = require('./../assets/icons/logo.jpg');
+
     return (
         <header id="header">
             <div className="logo">
-                <img src="./../assets/icons/logo.jpg" alt="logo" />
+            <img width="50" height="50" src={logo} alt="user-male-circle--v1"/>
             </div>
             <div className="menu">
                 <div className="top-nav">
                     <div className="profile">
-                        <img src="https://www.konami.com/games/eu/fr/assets/images/common/profile.png" alt="profile" />
+                        <img width="50" height="50" src="https://img.icons8.com/ios/500/user-male-circle--v1.png" alt="user-male-circle--v1"/>
                         <p>Mathis.h11</p>
                     </div>
                     <div className="consommation">
