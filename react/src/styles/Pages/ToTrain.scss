@@ -8,6 +8,9 @@
   padding: 0 5vw;
   min-height: 100vh;
 
+  background: var(--background);
+  color: var(--text-color);
+
   .presentation {
     margin: 5vh 0;
 
@@ -25,13 +28,12 @@
         padding: 0 2rem;
         width: 55%;
 
-        // Blurry background
-        background-color: #eeeeee25;
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px); // Compatible with Safari
+        &.full {
+          width: 100%;
+        }
 
         h1 {
-            font-size: 6rem;
+            font-size: 5rem;
             font-weight: 700;
             margin-bottom: 2rem;
             text-align: left;
@@ -73,7 +75,7 @@
             height: 20%;
             width: 60%;
 
-            background: rgba(255, 255, 255);
+            background: var(--background);
         }
 
       }

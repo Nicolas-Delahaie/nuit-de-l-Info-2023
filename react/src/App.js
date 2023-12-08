@@ -1,13 +1,22 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import { Route } from "react-router";
 
-import { createContext } from 'react';
+import { createContext, useEffect, useState, useRef } from "react";
 import { Header, Footer } from './components';
 import { Home, NotFound, Connect, KGames, News, ToTrain, WaterMelonGame , Inform} from './pages';
+import "./styles/App.css";
 
 // ------- CONTEXTE -------
 export const contexte = createContext();
 
+export const Themes = {
+  Standard: "standard",
+  Eco: "eco",
+  Minimal: "minimal",
+  Fire: "fire",
+};
+
+let theme = Themes.Standard;
 
 function App() {
   // -- FONCTIONS --
@@ -27,11 +36,7 @@ function App() {
    *
    * @author Nicolas Delahaie (venir me voir pour questionnements)
    */
-  const apiAccess = async ({
-    url,
-    method = "get",
-    body = undefined,
-  }) => {
+  const apiAccess = async ({ url, method = "get", body = undefined }) => {
     // -- CONSTANTES --
     const errorMessages = {
       400: "Requete mal formée",
@@ -40,26 +45,25 @@ function App() {
       404: "La ressource n'existe pas",
       422: "Mauvais format de reponse",
       503: "Service indisponible (surcharge ou maintenance)",
-      default: "Erreur de serveur"
-    }
+      default: "Erreur de serveur",
+    };
 
     // -- TRAITEMENT --
     console.log("Appel api : ", url);
     const res = await fetch(url, {
       method: method,
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
       body: body && JSON.stringify(body),
-    })
-      .catch(err => {
-        return {
-          success: false,
-          statusCode: 500,
-          erreur: errorMessages.default
-        }
-      })
+    }).catch((err) => {
+      return {
+        success: false,
+        statusCode: 500,
+        erreur: errorMessages.default,
+      };
+    });
 
     // -- RETOUR --
     if (res.ok) {
@@ -67,22 +71,105 @@ function App() {
       return {
         success: true,
         statusCode: res.status,
-        datas: res.status === 204 ? {} : await res.json(),      // On ne fait pas json() s il n y a pas de contenu
-      }
-    }
-    else {
+        datas: res.status === 204 ? {} : await res.json(), // On ne fait pas json() s il n y a pas de contenu
+      };
+    } else {
       // La requete a echoue
       return {
         success: false,
         statusCode: res.status,
-        erreur: errorMessages[res.status] || errorMessages.default
-      }
+        erreur: errorMessages[res.status] || errorMessages.default,
+      };
     }
+  };
+
+  // State
+  const [theme, setTheme] = useState(Themes.Standard);
+  const updateTheme = (newTheme) => {
+    document.body.classList.remove(theme);
+    setTheme(newTheme);
+    document.body.classList.add(newTheme);
+
+    // update the 'theme' key in localStorage
+    localStorage.setItem("theme", newTheme);
+  };
+
+  useEffect(() => {
+    // check if the 'theme' key exists in localStorage
+    if (localStorage.getItem("theme")) {
+      // get the theme from localStorage
+      let theme = localStorage.getItem("theme");
+      // check if the current theme exists in themes object
+      if (Object.values(Themes).includes(theme)) {
+        // if theme exists in themes object, update the theme in state
+        updateTheme(theme);
+      } else {
+        // if theme does not exist in themes object, set the theme as standard
+        updateTheme(theme);
+      }
+    } else {
+      // if 'theme' key does not exist in localStorage, add it
+      localStorage.setItem("theme", theme);
+    }
+  }, []);
+
+  // écoute du connami code
+  useEffect(() => {
+    const secretCode = [
+      "arrowup",
+      "arrowup",
+      "arrowdown",
+      "arrowdown",
+      "arrowleft",
+      "arrowright",
+      "arrowleft",
+      "arrowright",
+      "b",
+      "a",
+    ];
+    let enteredCode = [];
+
+    const handleKeyPress = (event) => {
+      const key = event.key.toLowerCase();
+      enteredCode.push(key);
+
+      // Vérifie si la suite du "conamycode" est respectée
+      if (enteredCode.join("").includes(secretCode.join(""))) {
+        console.log("Code secret activé!");
+        // Appeler la fonction que vous souhaitez activer
+        handleSecretCodeActivation();
+        // Réinitialiser la séquence entrée
+        enteredCode = [];
+      }
+    };
+
+    // Ajoute un écouteur d'événements lors du montage du composant
+    window.addEventListener("keydown", handleKeyPress);
+
+    // Retire l'écouteur d'événements lors du démontage du composant
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []); // Le tableau vide [] garantit que l'effet est exécuté une seule fois à l'initialisation
+
+  const linkWaterMelonGame = useRef();
+
+  function handleSecretCodeActivation() {
+    linkWaterMelonGame.current.click();
   }
 
   return (
     <div id="App">
-      <contexte.Provider value={{ apiAccess }}>
+      <a ref={linkWaterMelonGame} className="invisible" href="/watermelongame">
+        watermelongame link
+      </a>
+      <contexte.Provider
+        value={{
+          apiAccess,
+          theme,
+          updateTheme,
+        }}
+      >
         <Header />
         <BrowserRouter>
           <Routes>
@@ -95,8 +182,8 @@ function App() {
             <Route exact path="/to-inform" element={<Inform />} />
 
             <Route path="*" element={<NotFound />} />
-          </Routes >
-        </BrowserRouter >
+          </Routes>
+        </BrowserRouter>
         <Footer />
       </contexte.Provider>
     </div>
@@ -104,4 +191,3 @@ function App() {
 }
 
 export default App;
-

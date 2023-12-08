@@ -1,6 +1,7 @@
-import { useContext } from "react";
+import {useContext, useEffect, useState} from "react";
 import { contexte } from "../App";
 import { Separateur } from "../components";
+import { ListeNews } from "../components";
 
 import "../styles/home.scss";
 
@@ -47,24 +48,34 @@ const icon = (iconColor = "#fff") => {
 
 
 function Home() {
-    const { apiAccess } = useContext(contexte);
+    const {
+      theme
+    } = useContext(contexte);
 
     const monicon = icon("#5A8F69");
-
-
-    
-
     const plantIcon = iconSeperateur();
 
-    
+    const [isMinimal, setIsMinimal] = useState(theme !== 'minimal');
+
+    useEffect(() => {
+      setIsMinimal(theme !== 'minimal');
+    }, [theme]);
+
+
 
     return (
         <div id="home">
 
-            <div className="main-header">
-                <div className="blur"></div>
+            <div className={
+                isMinimal ? "main-header" : `main-header minimal`
+            }>
+                {
+                  isMinimal && (
+                    <div className="blur"></div>
+                  )
+                }
                 <h2>
-                    Suivez ceux qui agissent pour un impact durable 
+                    Suivez ceux qui agissent pour un impact durable
                 </h2>
                 <h4>
                     Devenez un #Embusqué
@@ -101,17 +112,15 @@ Rejoignez-nous dans cette aventure d'apprentissage et restez informé
             <Separateur icone={plantIcon} />
 
             <div className="third-section">
-
-                <p>
-                    METTRE LES NEWS 
-                </p>
+                <h1>News</h1>
+                <ListeNews nbNews={3} estConnecte={false} />
             </div>
 
-                
+
         </div>
 
 
-        
+
     )
 }
 export default Home;
