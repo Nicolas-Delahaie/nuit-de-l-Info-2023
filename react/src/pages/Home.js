@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { contexte } from "../App";
 import { Separateur } from "../components";
+import { ListeNews } from "../components";
 
 import "../styles/home.scss";
 
@@ -101,10 +102,8 @@ Rejoignez-nous dans cette aventure d'apprentissage et restez informé
             <Separateur icone={plantIcon} />
 
             <div className="third-section">
-
-                <p>
-                    METTRE LES NEWS 
-                </p>
+                <h1>News</h1>
+                <ListeNews nbNews={3} estConnecte={false} />
             </div>
 
                 
