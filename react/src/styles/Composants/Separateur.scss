@@ -22,6 +22,17 @@
   &__ligne {
     height: 1px;
     width: 100vw;
+
+    &.left {
+      border-top-right-radius: 999px;
+      border-bottom-right-radius: 999px;
+    }
+
+    &.right {
+      border-top-left-radius: 999px;
+      border-bottom-left-radius: 999px;
+    }
+
   }
 
 }

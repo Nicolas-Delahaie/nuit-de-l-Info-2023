@@ -31,18 +31,10 @@ const testIcon = (iconColor = "#fff") => {
 function ToTrain() {
 
     const plantIcon = testIcon();
-    const plantIcon2 = testIcon('red');
 
     return (
       <div id="to-train">
-          <Separateur icone={plantIcon}/>
-          <Separateur
-            icone={plantIcon2}
-            iconPadding={'6rem'}
-            bgColor={'hotpink'}
-            lineSize={'1px'}
-            lineColor={'#5A8F69'}
-          />
+        <Separateur icone={plantIcon} />
       </div>
     )
 }

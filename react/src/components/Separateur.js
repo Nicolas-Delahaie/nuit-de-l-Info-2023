@@ -32,7 +32,7 @@ const Separateur = ({
 
     return (
         <div className="separateur" style={{backgroundColor: bgColor}}>
-            <div className="separateur__ligne" style={{
+            <div className="separateur__ligne left" style={{
                 backgroundColor: lineColor,
                 height: lineSize
               }}
@@ -41,7 +41,7 @@ const Separateur = ({
                 padding: iconPadding
               }}
             >{icone}</div>
-            <div className="separateur__ligne" style={{
+            <div className="separateur__ligne right" style={{
                 backgroundColor: lineColor,
                 height: lineSize
               }}
