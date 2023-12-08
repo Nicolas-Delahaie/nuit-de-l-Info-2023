@@ -31,7 +31,7 @@ const Separateur = ({
   iconSize = "5rem",
   height = "20vh",
   width = "100%",
-  bgColor = "#5a8f69",
+  // bgColor = "#5a8f69",
   lineColor = "#fff",
   lineSize = "4px",
 }) => {
@@ -39,7 +39,6 @@ const Separateur = ({
 
     return (
         <div className="separateur" style={{
-            backgroundColor: bgColor,
             height: height,
             width: width
           }}

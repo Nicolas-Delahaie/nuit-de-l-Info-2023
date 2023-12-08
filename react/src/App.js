@@ -1,12 +1,21 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import { Route } from "react-router";
 
-import { createContext } from 'react';
+import {createContext, useState} from 'react';
 import { Header, Footer } from './components';
 import { Home, NotFound, Connect, KGames, News, ToTrain, WaterMelonGame , Inform} from './pages';
 
 // ------- CONTEXTE -------
 export const contexte = createContext();
+
+export const Themes = {
+  Standard: "standard",
+  Eco: "eco",
+  Minimal: "minimal",
+  Fire: "fire",
+};
+
+let theme = Themes.Standard;
 
 
 function App() {
@@ -80,9 +89,23 @@ function App() {
     }
   }
 
+  // State
+  const [theme, setTheme] = useState(Themes.Standard);
+  const updateTheme = (newTheme) => {
+    document.body.classList.remove(theme);
+    setTheme(newTheme);
+    document.body.classList.add(newTheme);
+  };
+
+
+
   return (
     <div id="App">
-      <contexte.Provider value={{ apiAccess }}>
+      <contexte.Provider value={{
+        apiAccess,
+        theme,
+        updateTheme
+      }}>
         <Header />
         <BrowserRouter>
           <Routes>

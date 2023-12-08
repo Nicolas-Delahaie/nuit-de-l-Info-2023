@@ -41,15 +41,14 @@
             margin: 4em 0;
             width: 100%;
             .titre {
-                color: $green;
+                color: var(--test);
                 font-size: 2em;
                 margin: 0;
                 text-transform: uppercase;
             }
             .sousTitre {
-                color: $green;
+                color: var(--test);
                 margin: 0 0 1em 0;
-                color: $black;
                 font-size: 2em;
             }
             .article {
@@ -79,9 +78,9 @@
                 a {
                     text-decoration: none;
                 }
-               
+
             }
-        } 
+        }
         .savoirPlus {
             width: 100%;
             text-align: right;
@@ -89,23 +88,23 @@
                 display: inline;
                 margin-top: 2em;
                 font-size: 1.5em;
-                color: $green;
+                color: var(--test);
                 margin: 0;
                 text-decoration: underline;
                 font-weight: bold;
-                
+
             }
             .arrow {
                 display: inline;
                 font-weight: bold;
-                color: $green;
+                color: var(--test);
                 font-size: 2em;
                 margin-left: 0.5em;
             }
-           
+
         }
 
-    
-    }   
-    
+
+    }
+
 }

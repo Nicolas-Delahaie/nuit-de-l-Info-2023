@@ -1,8 +1,22 @@
+import {useContext} from "react";
+import {contexte, Themes} from "../App";
+
 
 
 function Header() {
 
+    const {
+      theme,
+      updateTheme
+    } = useContext(contexte);
+
     const logo = require('./../assets/icons/logo.jpg');
+
+
+    // functions
+    const handleThemeSelectorChange = (event) => {
+      updateTheme(event.target.value);
+    }
 
     return (
         <header id="header" >
@@ -30,11 +44,20 @@ function Header() {
                         <li><a href="/to-train">SE FORMER</a></li>
                         <li><a href="/news">QUOI DE NEUF ?</a></li>
                         <li><a href="/kgames">JEUX LUDIQUES</a></li>
-                        <select name="themeSelector" id="themeSelector">
-                            <option value="standard">Standard</option>
-                            <option value="eco">Eco</option>
-                            <option value="minimal">Minimal</option>
-                            <option value="theme1">Theme 1</option>
+
+                        <select
+                          name="themeSelector"
+                          id="themeSelector"
+
+                          onChange={handleThemeSelectorChange}
+                        >
+                            {
+                                Object.keys(Themes).map((key, index) => {
+                                    return (
+                                        <option key={index} value={Themes[key]}>{key}</option>
+                                    )
+                                })
+                            }
                         </select>
                     </ul>
                 </div>

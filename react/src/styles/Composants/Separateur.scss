@@ -4,11 +4,14 @@
  * @author Tom Planche
  */
 
+@import "../variables";
+
 .separateur {
   height: 20vh;
   width: 100%;
 
-  background: red;
+  background: var(--accent-color);
+  color: var(--text-color);
 
   display: flex;
   flex-direction: row;
