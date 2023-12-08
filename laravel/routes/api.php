@@ -25,6 +25,9 @@ use App\Http\Controllers\Controller;
 
 Route::get('/donnees-veep-NoConnected', [Controller::class, 'getVeepContentNoConnect'])->middleware(['tokenBon']);
 Route::get('/donnees-veep-Connected', [Controller::class, 'getVeepContentConnect'])->middleware(['tokenBon']);
+Route::get('/donnes-react-connecte', [Controller::class, 'getContentConnected'])->middleware(['tokenBon']);
+Route::get('/donnes-react-non-connecte', [Controller::class, 'getContentNoConnected']);
+
 
 
 
