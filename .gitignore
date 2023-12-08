@@ -72,6 +72,8 @@ web_modules/
 
 # dotenv environment variable files
 .env
+.env.backup
+.env.production
 .env.development.local
 .env.test.local
 .env.production.local
@@ -83,7 +85,6 @@ web_modules/
 
 # Next.js build output
 .next
-out
 
 # Nuxt.js build / generate output
 .nuxt
@@ -118,6 +119,7 @@ dist
 .tern-port
 
 # Stores VSCode versions used for testing VSCode extensions
+/.vscode
 .vscode-test
 
 # yarn v2
@@ -132,3 +134,16 @@ build
 
 # misc
 .DS_Store
+
+# Laravel
+/.phpunit.cache
+/laravel/public/hot
+/laravel/public/storage
+/laravel/storage/*.key
+/laravel/vendor
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+auth.json
+/.idea
+/.fleet
