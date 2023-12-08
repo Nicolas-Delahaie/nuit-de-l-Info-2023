@@ -12,9 +12,24 @@ function Connect() {
         const validPassword = 'password123';
 
         if (username === validUsername && password === validPassword) {
-        setMessage('Authentification réussie');
+            setMessage('Authentification réussie');
+
+            // set the username to the localStorage
+            localStorage.setItem('isAuthenticated', 'true');
+            localStorage.setItem('username', username);
+
+            // redirect the user to the home page
+            window.location.href = '/';
+
         } else {
-        setMessage('Échec de l\'authentification');
+            setMessage('Échec de l\'authentification');
+
+            // set the username to the localStorage
+            localStorage.setItem('isAuthenticated', 'false');
+            localStorage.setItem('username', '');
+
+            // reload the page
+            window.location.reload();
         }
     };
 
