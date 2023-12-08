@@ -26,8 +26,8 @@ function Header() {
                 <div className="bottom-nav">
                     <ul>
                         <li><a href="/">ACCUEIL</a></li>
-                        <li><a href="/toInform">S'INFORMER</a></li>
-                        <li><a href="/totrain">SE FORMER</a></li>
+                        <li><a href="/to-inform">S'INFORMER</a></li>
+                        <li><a href="/to-train">SE FORMER</a></li>
                         <li><a href="/news">QUOI DE NEUF ?</a></li>
                         <li><a href="/kgames">JEUX LUDIQUES</a></li>
                         <select name="themeSelector" id="themeSelector">

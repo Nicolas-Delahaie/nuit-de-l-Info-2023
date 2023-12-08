@@ -92,7 +92,7 @@ function App() {
             <Route exact path="/news" element={<News />} />
             <Route exact path="/to-train" element={<ToTrain />} />
             <Route exact path="/watermelongame" element={<WaterMelonGame />} />
-            <Route exact path="/toInform" element={<Inform />} />
+            <Route exact path="/to-inform" element={<Inform />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes >
