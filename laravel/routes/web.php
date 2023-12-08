@@ -14,8 +14,6 @@ use App\Services\ApiVeepContent;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/donnees-veep-NoConnected', 'App\Http\Controllers\Controller@getVeepContentNoConnect');
-Route::get('/donnees-veep-Connected', 'App\Http\Controllers\Controller@getVeepContentConnect');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
