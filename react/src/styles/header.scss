@@ -1,0 +1,10 @@
+// --------------------------------------- //
+// ------------- COMPOSANTS -------------- //
+// --------------------------------------- //
+
+#header{
+    height: max-content !important;
+    margin: 20px 10vw;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}

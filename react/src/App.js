@@ -92,6 +92,7 @@ function App() {
             <Route exact path="/news" element={<News />} />
             <Route exact path="/totrain" element={<ToTrain />} />
             <Route exact path="/watermelongame" element={<WaterMelonGame />} />
+            <Route exact path="/toInform" element={<Inform />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes >
