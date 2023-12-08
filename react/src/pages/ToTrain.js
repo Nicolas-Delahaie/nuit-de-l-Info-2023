@@ -82,7 +82,7 @@ function ToTrain() {
           </div>
         </div>
 
-        <Separateur icone={plantIcon} />
+        <Separateur icone={plantIcon} height='10rem' iconPadding='1rem'/>
 
         <div className="articles">
           {
