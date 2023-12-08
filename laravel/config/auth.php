@@ -45,6 +45,7 @@ return [
             'hash' => false,
             'expire' => 1440
         ],
+
     ],
 
     /*

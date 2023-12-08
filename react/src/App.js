@@ -3,7 +3,7 @@ import { Route } from "react-router";
 
 import { createContext } from 'react';
 import { Header, Footer } from './components';
-import { Home, NotFound } from './pages';
+import { Home, NotFound, Connect, KGames, News, ToTrain, WaterMelonGame , Inform} from './pages';
 
 // ------- CONTEXTE -------
 export const contexte = createContext();
@@ -14,17 +14,17 @@ function App() {
   /**
    * @brief Permet d'envoyer une requête à une API de manière pratique et unifiée.
    * @details Donne un resultat clair et directement utilisable grace a des messages d'erreur en francais
-   * 
+   *
    * @param url L'URL de l'API (obligatoire).
    * @param method La méthode HTTP de la requête, par exemple "POST" ou "PUT" (par défaut : "GET").
    * @param body Le corps de la requête. Un objet représentant les données à envoyer dans le corps de la requête (par défaut : undefined).
-   * 
+   *
    * @returns Un objet contenant les résultats de la requête avec les propriétés suivantes :
    *          - success : Un booléen indiquant si la requête a réussi.
    *          - statusCode : Le code de statut de la réponse HTTP.
    *          - [data] : Les données renvoyées par la requête.
    *          - [error] : Une chaîne de caractères représentant un message d'erreur en cas d'échec de la requête.
-   * 
+   *
    * @author Nicolas Delahaie (venir me voir pour questionnements)
    */
   const apiAccess = async ({
@@ -87,6 +87,13 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home />} />
+            <Route exact path="/connect" element={<Connect />} />
+            <Route exact path="/kgames" element={<KGames />} />
+            <Route exact path="/news" element={<News />} />
+            <Route exact path="/to-train" element={<ToTrain />} />
+            <Route exact path="/watermelongame" element={<WaterMelonGame />} />
+            <Route exact path="/to-inform" element={<Inform />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes >
         </BrowserRouter >
