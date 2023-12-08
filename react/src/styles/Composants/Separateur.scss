@@ -16,7 +16,19 @@
   align-items: center;
 
   &__icone {
+    height: 10rem;
+    width: auto;
     padding: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      height: 100%;
+      width: auto;
+    }
+
   }
 
   &__ligne {
