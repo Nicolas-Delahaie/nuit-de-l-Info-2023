@@ -2,22 +2,39 @@
 
 
 #inform {
+
+
     .firstArticle {
         padding: 8em 10vw;
         display: flex;
         position: relative;
-        height: 40em;
+        min-height: 20rem;
+        background: var(--background);
+        color: var(--text-color);
+
+        body:is(.minimalist) & {
+            min-height: 10rem;
+        }
+
         .datas {
-                h1 {
-                    font-size: 5.5em;
-                    color: $black;
-                    margin: 0 0 0.5em 0;
-                    left: 1em;
-                }
+
+            width: 60%;
+            &:is(.full) {
+                width: 100%;
+
                 p {
-                    width: 50%;
-                    font-size: 1.5em;
+                    width: 100%;
                 }
+            }
+
+            h1 {
+                font-size: 5.5em;
+                margin: 0 0 0.5em 0;
+                left: 1em;
+            }
+            p {
+                font-size: 1.5em;
+            }
         }
         img {
             position: absolute;
@@ -25,11 +42,13 @@
             margin: auto;
             right: 0;
             bottom: 8em;
-            z-index: -1;
+            z-index: 3;
             left: 50%;
         }
     }
     .separateArticles {
+        color: var(--text-color);
+
         display: flex;
         justify-content: space-around;
         padding: 8em 10vw;
@@ -71,7 +90,7 @@
                 .title {
                     font-size: 1.5em;
                     margin: 0;
-                    color: $black;
+                    color: var(--text-color);
                     font-weight: bold;
 
                 }
@@ -93,11 +112,20 @@
                 text-decoration: underline;
                 font-weight: bold;
 
+                color: var(--accent-color);
+
+                &::before {
+                    body:is(.fire) & {
+                      text-decoration: none;
+                      content: "🔥";
+                    }
+                  }
+
             }
             .arrow {
                 display: inline;
                 font-weight: bold;
-                color: var(--test);
+                color: var(--accent-color);
                 font-size: 2em;
                 margin-left: 0.5em;
             }

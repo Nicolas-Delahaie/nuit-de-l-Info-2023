@@ -1,14 +1,29 @@
 import { Link } from 'react-router-dom'
 import "../styles/Composants/uneNews.scss";
+import {useContext, useEffect, useState} from "react";
+import {contexte} from "../App";
 
 
 function UneNews({UneNews}) {
+
+    const {
+      theme,
+    } = useContext(contexte);
+
+    let [isMinimal, setIsMinimal] = useState(theme !== 'minimal');
+
+    useEffect(() => {
+      setIsMinimal(theme !== 'minimal');
+    }, [theme]);
+
     return (
         <div className="unenews" id={UneNews.id}>
             <div className="profil">
                 {/* blob  */}
-                <img src={UneNews.blob} alt="blob" />
-                <a href={UneNews.linkedin} target="_blank" rel="noreferrer">Linkedin</a>
+              {
+                isMinimal && <img src={UneNews.blob} alt="blob"/>
+              }
+              <a href={UneNews.linkedin} target="_blank" rel="noreferrer">Linkedin</a>
             </div>
             <div className="text">
                 <h2 id='quest'>{UneNews.question}</h2>

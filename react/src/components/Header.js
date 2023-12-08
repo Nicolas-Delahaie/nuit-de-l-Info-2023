@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {contexte, Themes} from "../App";
 
 
@@ -6,9 +6,9 @@ import {contexte, Themes} from "../App";
 function Header() {
 
     const {
-      theme,
       updateTheme
     } = useContext(contexte);
+
 
     const logo = require('./../assets/icons/logo.jpg');
 
@@ -54,7 +54,9 @@ function Header() {
                             {
                                 Object.keys(Themes).map((key, index) => {
                                     return (
-                                        <option key={index} value={Themes[key]}>{key}</option>
+                                        <option key={index} value={Themes[key]} selected={
+                                          localStorage.getItem('theme') === Themes[key]
+                                        }>{key}</option>
                                     )
                                 })
                             }

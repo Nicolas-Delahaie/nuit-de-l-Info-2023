@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes } from "react-router-dom";
 import { Route } from "react-router";
 
-import {createContext, useState} from 'react';
+import {createContext, useEffect, useState} from 'react';
 import { Header, Footer } from './components';
 import { Home, NotFound, Connect, KGames, News, ToTrain, WaterMelonGame , Inform} from './pages';
 
@@ -95,9 +95,31 @@ function App() {
     document.body.classList.remove(theme);
     setTheme(newTheme);
     document.body.classList.add(newTheme);
+
+    // update the 'theme' key in localStorage
+    localStorage.setItem('theme', newTheme);
   };
 
-
+  useEffect(() => {
+    // check if the 'theme' key exists in localStorage
+    if (localStorage.getItem('theme')) {
+      console.log(`theme-caca: ${localStorage.getItem('theme')}`);
+      // get the theme from localStorage
+      let theme = localStorage.getItem('theme');
+      // check if the current theme exists in themes object
+      if (Object.values(Themes).includes(theme)) {
+        // if theme exists in themes object, update the theme in state
+        updateTheme(theme);
+      } else {
+        // if theme does not exist in themes object, set the theme as standard
+        updateTheme(theme);
+      }
+    } else {
+      // if 'theme' key does not exist in localStorage, add it
+      localStorage.setItem('theme', theme);
+      console.log(`theme-pipi: ${localStorage.getItem('theme')}`);
+    }
+  }, []);
 
   return (
     <div id="App">

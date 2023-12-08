@@ -1,6 +1,9 @@
 #news{
     margin: 50px 10vw;
 
+    background: var(--background);
+    color: var(--text-color);
+
     h1{
         font-size: 1.3rem;
         font-weight: 700;

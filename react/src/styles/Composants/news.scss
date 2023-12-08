@@ -6,7 +6,14 @@
     width: 80vw;
     gap : 20px;
 
+    background: var(--background);
+    color: var(--text-color);
+
     .unenews{
+
+        background: var(--background);
+        color: var(--text-color);
+
         display: grid;
         grid-template-columns: 100px 1fr;
         gap: 10px;
