@@ -43,18 +43,30 @@
     align-items: center;
     gap: 2rem;
 
+    &:is(.full) {
+        width: 100%;
+    }
+
     p {
       font-size: 1.5rem;
+      color: var(--text-color);
     }
 
     a {
-      color: $green;
+      color: var(--accent-color);
       align-self: flex-end;
       font-size: 2rem;
 
       padding-right: 5rem;
 
       text-decoration: underline;
+
+      &::before {
+        body:is(.fire) & {
+          text-decoration: none;
+          content: "🔥";
+        }
+      }
     }
   }
 

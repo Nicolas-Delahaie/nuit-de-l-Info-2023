@@ -1,10 +1,10 @@
-import "../styles/Composants/Inform.css";
+import "../styles/Composants/Inform.scss";
 import Separator from "../components/Separateur";
+import {useContext, useEffect, useState} from "react";
+import {contexte} from "../App";
+import firstArticle from "../assets/img/inform_first_article.png";
 
-function Inform() {
-  const firstArticle = require("./../assets/img/inform_first_article.png");
-
-  const testIcon = (iconColor = "#fff") => {
+const testIcon = (iconColor = "#fff") => {
     return (
       <svg
         width="100"
@@ -39,6 +39,9 @@ function Inform() {
       </svg>
     );
   };
+
+function Inform() {
+  const firstArticle = require("./../assets/img/inform_first_article.png");
 
   const plantIcon = testIcon();
 
@@ -87,12 +90,24 @@ function Inform() {
     },
   ];
 
+  const {
+     theme
+  } = useContext(contexte);
+
+  const [isMinimal, setIsMinimal] = useState(theme !== "minimal");
+
+  useEffect(() => {
+    setIsMinimal(theme !== "minimal");
+  }, [theme]);
+
   return (
     <div id="inform">
       <div className="firstArticle">
-        <div className="datas">
+        <div className={
+          isMinimal ? "datas" : "datas full"
+        }>
           <h1>
-            Réussir la transition <br /> écologique
+            Réussir la transition écologique
           </h1>
           <p>
             Les embusqués, nous sommes résolument engagés dans la lutte contre
@@ -103,9 +118,11 @@ function Inform() {
             une mobilisation générale : il faut faire plus vite.
           </p>
         </div>
-        <img src={firstArticle} alt="agriculteurs heureux" />
+        {
+          isMinimal && <img src={firstArticle} alt="agriculteurs heureux"/>
+        }
       </div>
-      <Separator icone={plantIcon} />
+      <Separator icone={plantIcon} height={'15rem'}/>
       <div className="separateArticles">
         <div className="impacteClim articles">
           <h2 className="titre">Impact du changement climatique</h2>
@@ -116,9 +133,13 @@ function Inform() {
             {articlesChangementClimatique.map((item, index) => {
               return (
                 <div className="article">
-                  <div className="imgContainer">
-                    <img src={item.img} alt="article img" />
-                  </div>
+                  {
+                    isMinimal && (
+                      <div className="imgContainer">
+                        <img src={item.img} alt="article img"/>
+                      </div>
+                    )
+                  }
                   <div className="datas">
                     <div className="date">{item.date}</div>
                     <a href={item.link}>
@@ -143,9 +164,13 @@ function Inform() {
             {articlesRapportGiec.map((item, index) => {
               return (
                 <div className="article">
-                  <div className="imgContainer">
-                    <img src={item.img} alt="article img" />
-                  </div>
+                  {
+                    isMinimal && (
+                      <div className="imgContainer">
+                        <img src={item.img} alt="article img"/>
+                      </div>
+                    )
+                  }
                   <div className="datas">
                     <div className="date">{item.date}</div>
                     <a href={item.link}>

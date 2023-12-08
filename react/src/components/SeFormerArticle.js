@@ -6,6 +6,8 @@
 
 // IMPORTS ===================================================================================================  IMPORTS
 import "../styles/Composants/SeFormerArticle.scss";
+import {contexte} from "../App";
+import {useContext, useEffect, useState} from "react";
 // END IMPORTS ==========================================================================================   END IMPORTS
 
 // VARIABLES ================================================================================================ VARIABLES
@@ -20,15 +22,31 @@ const SeFormerArticle = ({
   image_position_left = true
 }) => {
 
+  const {
+    theme,
+  } = useContext(contexte);
+
+  let [isMinimal, setIsMinimal] = useState(theme !== 'minimal');
+
+  useEffect(() => {
+    setIsMinimal(theme !== 'minimal');
+  }, [theme]);
+
   return (
     <div className="seFormerArticle"
            style={{
              flexDirection: image_position_left ? 'row' : "row-reverse"
            }}>
-      <div className="seFormerArticle__image">
-        <img src={image} alt="image" />
-      </div>
-      <div className="seFormerArticle__text"
+      {
+        isMinimal && (
+          <div className="seFormerArticle__image">
+            <img src={image} alt="miamEnfant"/>
+          </div>
+        )
+      }
+      <div className={
+        isMinimal ? `seFormerArticle__text ` : `seFormerArticle__text full`
+      }
       >
         <p>{paragraphe}</p>
         <a href={lien}>Lire la suite <span>&rarr;</span></a>

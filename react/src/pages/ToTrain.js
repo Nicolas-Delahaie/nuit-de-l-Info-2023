@@ -6,6 +6,9 @@ import "../styles/Pages/ToTrain.scss";
 import babaLogo from "../assets/img/logo-baba.png"
 import fresqueClimatLogo from "../assets/img/logo-fresque-climat.png"
 import fresqueNumeriqueLogo from "../assets/img/logo-fresque-numerique.png"
+import {contexte} from "../App";
+import {useContext, useEffect, useState} from "react";
+import image from "../assets/img/miamEnfant.png";
 
 const testIcon = (iconColor = "#fff") => {
   return (
@@ -33,8 +36,7 @@ const testIcon = (iconColor = "#fff") => {
   )
 }
 
-const articles = [
-  {
+const articles = [{
     paragraphe: "La Fresque du Climat est un outil neutre et objectif. Il se fonde sur les données issues des rapports scientifiques du GIEC (Groupe d’experts intergouvernemental sur l’évolution du climat) dont les recommandations orientent les décisions politiques et économiques à l’échelle mondiale.\n" +
       "\n" +
       "L’atelier mobilise l’intelligence collective pour sensibiliser les participants aux changements climatiques. Son approche ludique et pédagogique permet à tous les publics de s’approprier le sujet des changements climatiques et vise à éviter une descente verticale du savoir. Durant l’atelier, les participants relient les liens de cause à effets et intègrent les enjeux climatiques dans leur globalité.\n" +
@@ -63,10 +65,24 @@ function ToTrain() {
     const plantIcon = testIcon();
     const image = require('./../assets/img/miamEnfant.png');
 
+    const {
+      theme,
+    } = useContext(contexte);
+
+    let [isMinimal, setIsMinimal] = useState(theme !== 'minimal');
+
+
+  useEffect(() => {
+    setIsMinimal(theme !== 'minimal');
+  }, [theme]);
+
+
     return (
       <div id="to-train">
         <div className="presentation">
-          <div className="left">
+          <div className={
+            isMinimal ? `left` : `left full`
+          }>
             <h1>Sensibiliser autours de nous.</h1>
 
             <p>
@@ -74,18 +90,22 @@ function ToTrain() {
               Explorez nos chapitres de formation qui vous permettront de mieux comprendre les risques liés au réchauffement climatique d’origine humaine et les conséquences possibles de ce changement.Découvrez des stratégies d’adaptation et d’atténuation.
             </p>
           </div>
-          <div className="right">
-            <img src={image} alt="miamEnfant"/>
-            <div className="filler">
+          {
+            isMinimal && (
+              <div className="right">
+                <img src={image} alt="miamEnfant"/>
+                <div className="filler">
 
-            </div>
-          </div>
+                </div>
+              </div>
+            )
+          }
         </div>
 
         <Separateur icone={plantIcon} height='10rem' iconPadding='1rem'/>
 
         <div className="articles">
-          {
+        {
             articles.map((article, index) => {
               return (
                 <SeFormerArticle
