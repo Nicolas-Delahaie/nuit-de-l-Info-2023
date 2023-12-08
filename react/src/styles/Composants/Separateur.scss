@@ -1,0 +1,23 @@
+/**
+ * @file react/src/styles/Composants/Separateur.scss
+ * @description Separateur styles file
+ * @author Tom Planche
+ */
+
+.separateur {
+  height: 20vh;
+  width: 100vw;
+
+  background: red;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+/**
+ * End of file react/src/styles/Composants/Separateur.scss
+ */
