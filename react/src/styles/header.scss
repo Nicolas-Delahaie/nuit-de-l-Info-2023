@@ -5,8 +5,10 @@
 #header{
     height: max-content !important;
     margin: 20px 10vw;
+    padding-bottom: 20px;
     display: grid;
     grid-template-columns: 200px 1fr;
+
 
     .logo{
         height: 100px;
@@ -17,8 +19,6 @@
             width: 100%;
             object-fit: cover;
         }
-
-
     }
 
     .menu{

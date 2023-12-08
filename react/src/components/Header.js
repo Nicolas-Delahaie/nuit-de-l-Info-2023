@@ -5,7 +5,7 @@ function Header() {
     const logo = require('./../assets/icons/logo.jpg');
 
     return (
-        <header id="header">
+        <header id="header" >
             <div className="logo">
             <img width="50" height="50" src={logo} alt="user-male-circle--v1"/>
             </div>

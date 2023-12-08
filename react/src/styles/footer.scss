@@ -1,0 +1,196 @@
+// --------------------------------------- //
+// ------------- COMPOSANTS -------------- //
+// --------------------------------------- //
+
+#footer{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10vw;
+
+
+    .top-footer{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 20px;
+
+        .information{
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 20px;
+
+            .logo{
+                height: 100px!important;
+                width: 100px !important;
+
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .text{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 10px;
+                max-width: 600px;
+
+                p{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 700;
+                    font-size: .8rem;
+                    font-style: italic; 
+                }
+            }
+        }
+
+        .structures{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+
+            min-width: 300px;
+
+            .pages{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                max-width: 200px;
+                width: 100%;
+
+                h3{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    text-decoration: underline;
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+                    li{
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 700;
+                        font-size: .8rem;
+                        font-style: italic; 
+                        width: min-content;
+
+                        a{
+                            text-decoration: none;
+                            color: black;
+                            white-space: nowrap;
+                            width: min-content;
+    
+    
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 0%;
+                                height: 2px;
+                                background-color: black;
+                                transition: width .3s;
+                            }
+    
+                            &:hover::after{
+                                content: "";
+                                display: block;
+                                width: 100%;
+                                height: 2px;
+                                background-color: black;
+                            }
+    
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 0%;
+                                height: 2px;
+                                background-color: black;
+                                transition: width .3s;
+                            }
+                        }
+
+                    }
+                }
+            }
+
+            .autres{
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                h3{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 700;
+                    font-size: 1rem;
+                    text-decoration: underline;
+                }
+
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+
+
+                    li{
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 700;
+                        font-size: .8rem;
+                        font-style: italic; 
+                        width: min-content;
+
+                        a{
+                            text-decoration: none;
+                            color: black;
+                            white-space: nowrap;
+                            width: min-content;
+
+    
+    
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 0%;
+                                height: 2px;
+                                background-color: black;
+                                transition: width .3s;
+                            }
+    
+                            &:hover::after{
+                                content: "";
+                                display: block;
+                                width: 100%;
+                                height: 2px;
+                                background-color: black;
+                            }
+    
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 0%;
+                                height: 2px;
+                                background-color: black;
+                                transition: width .3s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
