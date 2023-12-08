@@ -1,7 +1,13 @@
-import {Separateur} from "../components";
+
+
+import {SeFormerArticle, Separateur} from "../components";
+import "../styles/Pages/ToTrain.scss";
+
+import babaLogo from "../assets/img/logo-baba.png"
+import fresqueClimatLogo from "../assets/img/logo-fresque-climat.png"
+import fresqueNumeriqueLogo from "../assets/img/logo-fresque-numerique.png"
 
 const testIcon = (iconColor = "#fff") => {
-
   return (
     <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g clipPath="url(#clip0_35_151)">
@@ -27,14 +33,72 @@ const testIcon = (iconColor = "#fff") => {
   )
 }
 
+const articles = [
+  {
+    paragraphe: "La Fresque du Climat est un outil neutre et objectif. Il se fonde sur les données issues des rapports scientifiques du GIEC (Groupe d’experts intergouvernemental sur l’évolution du climat) dont les recommandations orientent les décisions politiques et économiques à l’échelle mondiale.\n" +
+      "\n" +
+      "L’atelier mobilise l’intelligence collective pour sensibiliser les participants aux changements climatiques. Son approche ludique et pédagogique permet à tous les publics de s’approprier le sujet des changements climatiques et vise à éviter une descente verticale du savoir. Durant l’atelier, les participants relient les liens de cause à effets et intègrent les enjeux climatiques dans leur globalité.\n" +
+      "\n" +
+      "Sans culpabiliser et par une compréhension partagée des mécanismes à l’œuvre, la Fresque engage les individus dans un échange constructif. A l’issue de l’atelier, les participants sont motivés et outillés pour agir à leur niveau.",
+    lien: "https://fresqueduclimat.org/",
+    image: fresqueClimatLogo
+  },
+  {
+    paragraphe: "La Fresque du Numérique est un atelier ludique et collaboratif d'une demi-journée avec une pédagogie similaire à celle de La Fresque du Climat. Le but de ce \"serious game\" est de sensibiliser et former les participant·es aux enjeux environnementaux du numérique.\n" +
+      "\n" +
+      "L'atelier vise aussi à expliquer les grandes lignes des actions à mettre en place pour évoluer vers un numérique plus soutenable, puis à ouvrir des discussions entre les participant·es sur le sujet. Véritable outil de team building, cet atelier permet de se rassembler pour apprendre ensemble. Il est avant tout destiné à être réalisé en présentiel, mais un format distanciel est aussi possible.",
+    lien: "https://fresqueduclimat.org/inscription-formation/",
+    image: fresqueNumeriqueLogo
+  },
+  {
+    paragraphe: "Développez vos connaissances pour votre vie personnelle et citoyenne grâce à des contenus clairs et accessibles, réalisés à partir de constats scientifiques.Explorez nos chapitres de formation qui vous permettront de mieux comprendre les risques liés au réchauffement climatique d’origine humaine et les conséquences possibles de ce changement.Découvrez des stratégies d’adaptation et d’atténuation.",
+    lien: "https://climat.cned.fr/formations/",
+    image: babaLogo
+  },
+]
+
 
 function ToTrain() {
 
     const plantIcon = testIcon();
+    const image = require('./../assets/img/miamEnfant.png');
 
     return (
       <div id="to-train">
+        <div className="presentation">
+          <div className="left">
+            <h1>Sensibiliser autours de nous.</h1>
+
+            <p>
+              Développez vos connaissances pour votre vie personnelle et citoyenne grâce à des contenus clairs et accessibles, réalisés à partir de constats scientifiques.
+              Explorez nos chapitres de formation qui vous permettront de mieux comprendre les risques liés au réchauffement climatique d’origine humaine et les conséquences possibles de ce changement.Découvrez des stratégies d’adaptation et d’atténuation.
+            </p>
+          </div>
+          <div className="right">
+            <img src={image} alt="miamEnfant"/>
+            <div className="filler">
+
+            </div>
+          </div>
+        </div>
+
         <Separateur icone={plantIcon} />
+
+        <div className="articles">
+          {
+            articles.map((article, index) => {
+              return (
+                <SeFormerArticle
+                  key={index}
+                  paragraphe={article.paragraphe}
+                  lien={article.lien}
+                  image={article.image}
+                  image_position_left={index % 2 !== 0}
+                />
+              )
+            })
+          }
+        </div>
       </div>
     )
 }
