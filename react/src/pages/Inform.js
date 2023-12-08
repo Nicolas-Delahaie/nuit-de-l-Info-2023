@@ -2,7 +2,7 @@ import "../styles/Composants/Inform.css";
 import Separator from "../components/Separateur";
 
 function Inform() {
-  const logo = require("./../assets/img/inform_first_article.png");
+  const firstArticle = require("./../assets/img/inform_first_article.png");
 
   const testIcon = (iconColor = "#fff") => {
     return (
@@ -42,6 +42,51 @@ function Inform() {
 
   const plantIcon = testIcon();
 
+  const articlesChangementClimatique = [
+    {
+      img: require("./../assets/img/articleChangementClimatique1.jpg"),
+      title: "Quels sont les impacts du changement climatique en France ?",
+      date: "17-11-2023",
+      link: "https://reseauactionclimat.org/quels-sont-les-impacts-du-changement-climatique-en-france/",
+    },
+    {
+      img: require("./../assets/img/articleChangementClimatique2.jpg"),
+      title: "Biodiversité et climat : même combat",
+      date: "05-12-2022",
+      link: "https://reseauactionclimat.org/biodiversite-et-climat-meme-combat/",
+    },
+    {
+      img: require("./../assets/img/articleChangementClimatique3.jpg"),
+      title: "Climat et santé, des enjeux liés",
+      date: "03-11-2022",
+      link: "https://reseauactionclimat.org/climat-et-sante-des-enjeux-lies/",
+    },
+  ];
+
+  const articlesRapportGiec = [
+    {
+      img: require("./../assets/img/articleRapportGiec1.jpg"),
+      title:
+        "Sinthèse de 6e rapport du GIEC: l'urgence climatique est là, les solution aussi",
+      date: "20-03-2023",
+      link: "https://reseauactionclimat.org/synthese-du-rapport-du-giec-lurgence-climatique-est-la-les-solutions-aussi/",
+    },
+    {
+      img: require("./../assets/img/articleRapportGiec2.jpg"),
+      title:
+        "6e rapport du GIEC: quelles solutions face au changement climatique ?",
+      date: "04-04-2022",
+      link: "https://reseauactionclimat.org/6e-rapport-du-giec-quelles-solutions-face-au-changement-climatique/",
+    },
+    {
+      img: require("./../assets/img/articleRapportGiec3.jpg"),
+      title:
+        "6e rapport du GIEC: quelles sont les conséquences réelles du changement climatique ?",
+      date: "28-02-2022",
+      link: "https://reseauactionclimat.org/6e-rapport-du-giec-quelles-sont-les-consequences-reelles-du-changement-climatique/",
+    },
+  ];
+
   return (
     <div id="inform">
       <div className="firstArticle">
@@ -58,9 +103,67 @@ function Inform() {
             une mobilisation générale : il faut faire plus vite.
           </p>
         </div>
-        <img src={logo} alt="agriculteurs heureux" />
+        <img src={firstArticle} alt="agriculteurs heureux" />
       </div>
       <Separator icone={plantIcon} />
+      <div className="separateArticles">
+        <div className="impacteClim articles">
+          <h2 className="titre">Impact du changement climatique</h2>
+          <h3 className="sousTitre">
+            Comprendre les conséquences du changement climatique
+          </h3>
+          <div className="content">
+            {articlesChangementClimatique.map((item, index) => {
+              return (
+                <div className="article">
+                  <div className="imgContainer">
+                    <img src={item.img} alt="article img" />
+                  </div>
+                  <div className="datas">
+                    <div className="date">{item.date}</div>
+                    <a href={item.link}>
+                      <div className="title">{item.title}</div>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="savoirPlus">
+            <a href="https://reseauactionclimat.org/urgence-climatique/">
+              En savoir plus
+            </a>
+            <div className="arrow">→</div>
+          </div>
+        </div>
+        <div className="rapportGiec articles">
+          <h2 className="titre">Rapport du GIEC</h2>
+          <h3 className="sousTitre">Les contenus du dernier rapport du GIEC</h3>
+          <div className="content">
+            {articlesRapportGiec.map((item, index) => {
+              return (
+                <div className="article">
+                  <div className="imgContainer">
+                    <img src={item.img} alt="article img" />
+                  </div>
+                  <div className="datas">
+                    <div className="date">{item.date}</div>
+                    <a href={item.link}>
+                      <div className="title">{item.title}</div>
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="savoirPlus">
+            <a href="https://reseauactionclimat.org/urgence-climatique/">
+              En savoir plus
+            </a>
+            <div className="arrow">→</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

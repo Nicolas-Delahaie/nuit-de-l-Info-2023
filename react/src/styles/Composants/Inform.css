@@ -25,4 +25,77 @@
   bottom: 8em;
   z-index: -1;
   left: 50%;
+}
+#inform .separateArticles {
+  display: flex;
+  justify-content: space-around;
+  padding: 8em 10vw;
+}
+#inform .separateArticles .articles {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4em 0;
+  width: 100%;
+}
+#inform .separateArticles .articles .titre {
+  color: #5a8f69;
+  font-size: 2.5em;
+  margin: 0;
+  text-transform: uppercase;
+}
+#inform .separateArticles .articles .sousTitre {
+  color: #5a8f69;
+  margin: 0 0 1em 0;
+  color: #333;
+  font-size: 2.5em;
+}
+#inform .separateArticles .articles .article {
+  display: flex;
+  width: 100%;
+  height: 8em;
+  padding: 1em;
+}
+#inform .separateArticles .articles .article .imgContainer {
+  width: 8em;
+  height: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-right: 1em;
+}
+#inform .separateArticles .articles .article .imgContainer img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#inform .separateArticles .articles .article .title {
+  font-size: 2em;
+  margin: 0;
+  color: #333;
+  font-weight: bold;
+}
+#inform .separateArticles .articles .article a {
+  text-decoration: none;
+}
+#inform .separateArticles .savoirPlus {
+  width: 100%;
+  text-align: right;
+}
+#inform .separateArticles .savoirPlus a {
+  display: inline;
+  margin-top: 2em;
+  font-size: 1.5em;
+  color: #5a8f69;
+  margin: 0;
+  text-decoration: underline;
+  font-weight: bold;
+}
+#inform .separateArticles .savoirPlus .arrow {
+  display: inline;
+  font-weight: bold;
+  color: #5a8f69;
+  font-size: 2em;
+  margin-left: 0.5em;
 }/*# sourceMappingURL=Inform.css.map */
