@@ -1,0 +1,26 @@
+/* --------------------------------------------- */
+/*                    IMPORTS                    */
+/* --------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital@1&display=swap");
+/* --------------------------------------------- */
+/*                     GLOABL                    */
+/* --------------------------------------------- */
+:root {
+  --xxx-x: #xxxxx;
+}
+
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen";
+}
+
+/* --------------------------------------------- */
+/*               BALISES NATIVES HTML            */
+/* --------------------------------------------- */
+body {
+  margin: 0;
+}
+
+#App {
+  display: grid;
+  grid-template-rows: 100px 1fr 50px;
+}/*# sourceMappingURL=index.css.map */
